@@ -1,0 +1,46 @@
+/* PreShopping */
+.wrap-content {
+  background-image: url("../../img/img-preShopping.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+.wrap-content h3 {
+  font-size: 4rem;
+}
+.links:hover {
+  color: #cccccc !important;
+}
+
+/* Special Prize */
+.special-prize_info button {
+  background: transparent;
+  color: #fff;
+}
+
+.special-prize_info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  background-image: url("../../img/img-specialPrize.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.special-prize_info h3 {
+  font-size: 4rem;
+  padding-bottom: 20px;
+}
+.special-prize_info p {
+  font-size: 2rem;
+}
