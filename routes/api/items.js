@@ -6,8 +6,17 @@ const passport = require("passport");
 const MenItem = require("../../models/MenItems");
 const User = require("../../models/User");
 
+//@route  GET api/items/menItems
+//@desc   Get posts
+//@access Public
+router.get("/menitems", (req, res) => {
+  MenItem.find()
+    .then(posts => res.json(posts))
+    .catch(err => res.status(404).json({ nopostsfound: "No posts found." }));
+});
+
 // @route   POST api/items/menitems
-// @desc    Men item like
+// @desc    Men item
 // @access  Private
 router.post(
   "/menitems",
@@ -29,11 +38,26 @@ router.post(
   "/menitems/like/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    User.findOne({ email: req.email });
-    then(user => {
+    User.findOne({ user: req.user.id }).then(user => {
       MenItem.findById(req.params.id)
-        .then(item => {})
-        .catch(err => res.status(404).json({ itemnotfound: "Item not found" }));
+        .then(item => {
+          if (
+            item.likes.filter(like => like.user.toString() === req.user.id)
+              .length > 0
+          ) {
+            const removeIndex = item.likes
+              .map(like => like.user.toString())
+              .indexOf(req.user.id);
+            // Remove like from array
+            item.likes.splice(removeIndex, 1);
+            // Save
+            item.save().then(item => res.json(item));
+          } else {
+            item.likes.unshift({ user: req.user.id });
+            item.save().then(item => res.json(item));
+          }
+        })
+        .catch(err => err.status(404).json({ usernotfound: "user not found" }));
     });
   }
 );

@@ -23,14 +23,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  likes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: "menitems"
-      }
-    }
-  ]
+  menItem: {
+    type: Schema.Types.ObjectId,
+    ref: "menitems"
+  }
 });
 
 module.exports = User = mongoose.model("users", UserSchema);
