@@ -4,6 +4,7 @@ const passport = require("passport");
 
 // Load items model
 const MenItem = require("../../models/MenItems");
+const WomenItem = require("../../models/WomenItems");
 const User = require("../../models/User");
 
 //@route  GET api/items/menItems
@@ -62,4 +63,28 @@ router.post(
   }
 );
 
+// @route   POST api/items/womenitems
+// @desc    Women item
+// @access  Private
+router.post(
+  "/womenitems",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const newItem = new WomenItem({
+      nameItem: req.body.nameItem
+    });
+    newItem.save().then(item => {
+      res.json(item);
+    });
+  }
+);
+
+//@route  GET api/items/menItems
+//@desc   Get posts
+//@access Public
+router.get("/womenitems", (req, res) => {
+  WomenItem.find()
+    .then(posts => res.json(posts))
+    .catch(err => res.status(404).json({ nopostsfound: "No posts found." }));
+});
 module.exports = router;

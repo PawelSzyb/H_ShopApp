@@ -19,21 +19,11 @@ const PrimaryMenu = () => {
         <NavItem>
           <Link
             name="on"
-            className="mr-5 btn btn-outline-secondary"
+            className=" btn btn-outline-secondary"
             color="secondary"
             to="/ona"
           >
             Ona
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link
-            name="on"
-            className="btn btn-outline-secondary"
-            color="secondary"
-            to="/dziecko"
-          >
-            Dziecko
           </Link>
         </NavItem>
       </Nav>

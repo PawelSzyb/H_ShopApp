@@ -17,6 +17,7 @@ import LandingPage from "./components/landing/LandingPage";
 import Footer from "./components/landing/Footer";
 import WomenPage from "./components/women/WomenPage";
 import MenPage from "./components/men/MenPage";
+import FavoritePage from "./components/favorite/FavoritePage";
 
 // Check for token
 if (localStorage.jwToken) {
@@ -48,6 +49,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/ona" component={WomenPage} />
               <Route exact path="/on" component={MenPage} />
+              <Route exact path="/favorite" component={FavoritePage} />
             </div>
             <Route exact path="/" component={Footer} />
           </div>

@@ -1,11 +1,16 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, Col } from "reactstrap";
-import { toggleLike } from "../../actions/itemsActions";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
-class MenItems extends Component {
+import { Card, CardImg, CardText, CardBody, Col } from "reactstrap";
+
+import { getMenItems } from "../../actions/itemsActions";
+
+class FavoriteItems extends Component {
+  componentDidMount() {
+    this.props.getMenItems();
+  }
   onToggleClick(id, item, e) {
     this.props.toggleLike(id);
 
@@ -20,20 +25,11 @@ class MenItems extends Component {
   }
   render() {
     const { isAuthenticated, user } = this.props.auth;
-
     const menItems = this.props.menItems;
-
     return (
-      <div>
-        <Link
-          to={"/"}
-          className="btn btn-secondary"
-          style={{ marginBottom: "20px" }}
-        >
-          Cofnij
-        </Link>
-        <div className="row">
-          {menItems.map((item, index) => {
+      <div className="row">
+        {/* {isAuthenticated ? (
+          menItems.map((item, index) => {
             return (
               <Col key={item._id} xs="9" sm="6" md="4" lg="3">
                 <Card className="mb-5">
@@ -64,16 +60,17 @@ class MenItems extends Component {
                 </Card>
               </Col>
             );
-          })}
-        </div>
+          }) */}
+        {/* ) : ( */}
+        {/* <Redirect to="/login" /> */}
+        {/* )} */}
+        <h1>fav</h1>
       </div>
     );
   }
 }
-
-MenItems.propTypes = {
-  toggleLike: PropTypes.func.isRequired,
-  menItems: PropTypes.array.isRequired
+FavoriteItems.propTypes = {
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -82,5 +79,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { toggleLike }
-)(MenItems);
+  { getMenItems }
+)(FavoriteItems);

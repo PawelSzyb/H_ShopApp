@@ -1,18 +1,18 @@
 import axios from "axios";
-import { GET_ITEMS } from "./types";
+import { GET_MEN_ITEMS, GET_WOMEN_ITEMS } from "./types";
 
-export const getItems = () => dispatch => {
+export const getMenItems = () => dispatch => {
   axios
-    .get("/api/items/menItems")
+    .get("/api/items/menitems")
     .then(res =>
       dispatch({
-        type: GET_ITEMS,
+        type: GET_MEN_ITEMS,
         payload: res.data
       })
     )
     .catch(err =>
       dispatch({
-        type: GET_ITEMS,
+        type: GET_MEN_ITEMS,
         payload: null
       })
     );
@@ -21,10 +21,27 @@ export const getItems = () => dispatch => {
 export const toggleLike = id => dispatch => {
   axios
     .post(`/api/items/menitems/like/${id}`)
-    .then(res => dispatch(getItems()))
+    .then(res => dispatch(getMenItems()))
     .catch(err =>
       dispatch({
-        type: GET_ITEMS,
+        type: GET_MEN_ITEMS,
+        payload: null
+      })
+    );
+};
+
+export const getWomenItems = () => dispatch => {
+  axios
+    .get("/api/items/womenitems")
+    .then(res =>
+      dispatch({
+        type: GET_WOMEN_ITEMS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_WOMEN_ITEMS,
         payload: null
       })
     );

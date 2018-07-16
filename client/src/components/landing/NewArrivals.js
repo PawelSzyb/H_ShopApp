@@ -9,7 +9,7 @@ import CardGallery from "../common/CardImg";
 
 const NewArrivals = () => {
   return (
-    <Row>
+    <Row style={{ maxWidth: "1100px", margin: "0 auto" }}>
       <Col xs="12" sm="6" md="4" lg="3">
         <CardGallery linkText="ZOBACZ WIĘCEJ" to="/ona" src={Model1} />
       </Col>

@@ -51,7 +51,9 @@ class AppNavBar extends Component {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Ulubione</NavLink>
+          <Link to={"/favorite"} className="nav-link">
+            Ulubione
+          </Link>
         </NavItem>
       </Nav>
     );

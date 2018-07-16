@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import MenItems from "./MenItems";
 import { connect } from "react-redux";
-import { getItems } from "../../actions/itemsActions";
+import { getMenItems } from "../../actions/itemsActions";
 import PropTypes from "prop-types";
 
-import Model1 from "../../img/newArrival/imgModel1.jpg";
-import Model2 from "../../img/newArrival/imgModel2.jpg";
 import Model3 from "../../img/newArrival/imgModel3.jpg";
 import Model4 from "../../img/newArrival/imgModel4.jpg";
 
 class MenPage extends Component {
   componentDidMount() {
-    this.props.getItems();
+    this.props.getMenItems();
   }
   render() {
-    const images = [Model1, Model2, Model3, Model4, Model1, Model2];
+    const images = [Model3, Model4, Model3, Model4, Model3, Model4];
 
     const { menItems } = this.props.menItem;
 
@@ -32,7 +30,7 @@ class MenPage extends Component {
 }
 MenPage.propTypes = {
   menItem: PropTypes.object.isRequired,
-  getItems: PropTypes.func.isRequired
+  getMenItems: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -41,5 +39,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getItems }
+  { getMenItems }
 )(MenPage);
