@@ -18,7 +18,7 @@ export const getMenItems = () => dispatch => {
     );
 };
 
-export const toggleLike = id => dispatch => {
+export const toggleMenLike = id => dispatch => {
   axios
     .post(`/api/items/menitems/like/${id}`)
     .then(res => dispatch(getMenItems()))
@@ -39,6 +39,18 @@ export const getWomenItems = () => dispatch => {
         payload: res.data
       })
     )
+    .catch(err =>
+      dispatch({
+        type: GET_WOMEN_ITEMS,
+        payload: null
+      })
+    );
+};
+
+export const toggleWomenLike = id => dispatch => {
+  axios
+    .post(`/api/items/womenitems/like/${id}`)
+    .then(res => dispatch(getWomenItems()))
     .catch(err =>
       dispatch({
         type: GET_WOMEN_ITEMS,

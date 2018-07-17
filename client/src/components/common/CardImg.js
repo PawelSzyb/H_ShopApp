@@ -4,8 +4,14 @@ import { Link } from "react-router-dom";
 
 const CardGallery = props => {
   return (
-    <Card className="mb-5">
-      <CardImg top height="285px" src={props.src} alt="Card image cap" />
+    <Card style={{ flex: "auto", width: "225px" }} className="mb-5">
+      <CardImg
+        top
+        height="285px"
+        src={props.src}
+        alt="Card image cap"
+        style={{ width: "100%", height: "auto" }}
+      />
       <CardBody>
         <CardText>Nowe produkty w naszej ofercie</CardText>
         <Link

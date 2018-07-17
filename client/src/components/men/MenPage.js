@@ -14,7 +14,7 @@ class MenPage extends Component {
   render() {
     const images = [Model3, Model4, Model3, Model4, Model3, Model4];
 
-    const { menItems } = this.props.menItem;
+    const { menItems } = this.props.items;
 
     let itemContent;
     if (menItems === (null || undefined)) {
@@ -29,12 +29,12 @@ class MenPage extends Component {
   }
 }
 MenPage.propTypes = {
-  menItem: PropTypes.object.isRequired,
+  items: PropTypes.object.isRequired,
   getMenItems: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  menItem: state.menItem
+  items: state.items
 });
 
 export default connect(

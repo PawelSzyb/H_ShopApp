@@ -11,7 +11,12 @@ const NewArrivals = () => {
   return (
     <Row style={{ maxWidth: "1100px", margin: "0 auto" }}>
       <Col xs="12" sm="6" md="4" lg="3">
-        <CardGallery linkText="ZOBACZ WIĘCEJ" to="/ona" src={Model1} />
+        <CardGallery
+          style={{ display: "flex", flexFlow: "row wrap" }}
+          linkText="ZOBACZ WIĘCEJ"
+          to="/ona"
+          src={Model1}
+        />
       </Col>
       <Col xs="12" sm="6" md="4" lg="3">
         <CardGallery linkText="ZOBACZ WIĘCEJ" to="/ona" src={Model2} />
