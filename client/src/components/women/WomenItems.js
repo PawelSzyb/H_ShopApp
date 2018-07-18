@@ -18,6 +18,7 @@ class WomenItems extends Component {
       e.target.className = "btn btn-success";
     }
   }
+
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
