@@ -8,7 +8,7 @@ const WomenItem = require("../../models/WomenItems");
 const User = require("../../models/User");
 
 //@route  GET api/items/menItems
-//@desc   Get posts
+//@desc   Get men items
 //@access Public
 router.get("/menitems", (req, res) => {
   MenItem.find()
@@ -17,7 +17,7 @@ router.get("/menitems", (req, res) => {
 });
 
 // @route   POST api/items/menitems
-// @desc    Men item
+// @desc    Men item add
 // @access  Private
 router.post(
   "/menitems",
@@ -64,7 +64,7 @@ router.post(
 );
 
 // @route   POST api/items/womenitems
-// @desc    Women item
+// @desc    Women item add
 // @access  Private
 router.post(
   "/womenitems",
@@ -79,8 +79,8 @@ router.post(
   }
 );
 
-//@route  GET api/items/menItems
-//@desc   Get posts
+//@route  GET api/items/womenItems
+//@desc   Get women items
 //@access Public
 router.get("/womenitems", (req, res) => {
   WomenItem.find()

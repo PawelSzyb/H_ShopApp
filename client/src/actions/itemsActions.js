@@ -1,6 +1,7 @@
 import axios from "axios";
 import { GET_MEN_ITEMS, GET_WOMEN_ITEMS } from "./types";
 
+// Get men items for db
 export const getMenItems = () => dispatch => {
   axios
     .get("/api/items/menitems")
@@ -18,6 +19,7 @@ export const getMenItems = () => dispatch => {
     );
 };
 
+// add like to men item
 export const toggleMenLike = id => dispatch => {
   axios
     .post(`/api/items/menitems/like/${id}`)
@@ -30,6 +32,7 @@ export const toggleMenLike = id => dispatch => {
     );
 };
 
+// get women items from db
 export const getWomenItems = () => dispatch => {
   axios
     .get("/api/items/womenitems")
@@ -47,6 +50,7 @@ export const getWomenItems = () => dispatch => {
     );
 };
 
+// add like to women item
 export const toggleWomenLike = id => dispatch => {
   axios
     .post(`/api/items/womenitems/like/${id}`)

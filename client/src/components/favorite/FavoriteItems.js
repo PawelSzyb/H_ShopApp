@@ -97,7 +97,7 @@ class FavoriteItems extends Component {
                   );
                   // );
                 } else {
-                  null;
+                  return null;
                 }
               })
             : null}
@@ -146,7 +146,7 @@ class FavoriteItems extends Component {
                   );
                   // );
                 } else {
-                  null;
+                  return null;
                 }
               })
             : null}

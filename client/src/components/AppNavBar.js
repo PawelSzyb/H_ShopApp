@@ -55,6 +55,11 @@ class AppNavBar extends Component {
             Ulubione
           </Link>
         </NavItem>
+        <NavItem>
+          <Link to={"/profile"} className="nav-link">
+            Konto
+          </Link>
+        </NavItem>
       </Nav>
     );
     const guestLinks = (
