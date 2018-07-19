@@ -13,13 +13,7 @@ export const deleteAccount = () => dispatch => {
   if (window.confirm("Are you sure about that?")) {
     axios
       .delete("/api/users")
-      .then(res =>
-        dispatch({
-          type: SET_CURRENT_USER,
-          payload: {}
-        })
-      )
-      // .then(logoutUser())
+      .then(res => dispatch(logoutUser()))
       .catch(err =>
         dispatch({
           type: GET_ERRORS,

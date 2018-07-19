@@ -15,7 +15,6 @@ class WomenPage extends Component {
     const images = [Model1, Model2, Model1, Model2, Model1, Model2];
 
     const { womenItems } = this.props.items;
-    console.log(womenItems);
 
     let itemContent;
     if (womenItems === (null || undefined)) {

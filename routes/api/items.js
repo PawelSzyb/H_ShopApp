@@ -119,4 +119,23 @@ router.post(
   }
 );
 
+// @route   DELETE api/items/menitems/like/:id
+// @desc    Delete Men item like
+// @access  Private
+router.delete(
+  "/menitems/like/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    User.findOne({ user: req.user.id })
+      .then(user => {
+        MenItem.findOneAndRemove({ user: req.user.id })
+          .then(res => res.json(user))
+          .catch(err =>
+            err.status(404).json({ usernotfound: "user not found" })
+          );
+      })
+      .catch(err => err.json("user not found"));
+  }
+);
+
 module.exports = router;
