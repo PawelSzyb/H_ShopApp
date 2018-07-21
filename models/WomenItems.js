@@ -13,8 +13,8 @@ const WomenItemShema = new Schema({
   likes: [
     {
       user: {
-        // type: Schema.Types.ObjectId,
-        // ref: "womenitems"
+        type: Schema.Types.ObjectId,
+        ref: "users"
       }
     }
   ]

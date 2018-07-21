@@ -31,18 +31,6 @@ export const toggleMenLike = id => dispatch => {
       })
     );
 };
-// delete like to men item
-export const deleteMenItemLike = id => dispatch => {
-  axios
-    .delete(`/api/items/menitems/like/${id}`)
-    .then(res => dispatch(getMenItems()))
-    .catch(err =>
-      dispatch({
-        type: GET_MEN_ITEMS,
-        payload: null
-      })
-    );
-};
 
 // get women items from db
 export const getWomenItems = () => dispatch => {

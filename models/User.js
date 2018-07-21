@@ -23,10 +23,6 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   }
-  // menItem: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "menitems"
-  // }
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

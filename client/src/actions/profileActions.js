@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SET_CURRENT_USER, GET_ERRORS, CLEAR_CURRENT_PROFILE } from "./types";
+import { GET_ERRORS, CLEAR_CURRENT_PROFILE } from "./types";
 import { logoutUser } from "./authActions";
 
 // Clear current profile

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteAccount } from "../../actions/profileActions";
 import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 import { Button } from "reactstrap";
 
@@ -16,9 +16,19 @@ class Profile extends Component {
     let profileContent;
     isAuthenticated ? (
       (profileContent = (
-        <Button color="danger" onClick={this.onDeleteClick.bind(this)}>
-          USUŃ KONTO
-        </Button>
+        <div>
+          <Link
+            to={"/"}
+            className="btn btn-secondary"
+            style={{ margin: "20px 0" }}
+          >
+            Cofnij
+          </Link>
+          <br />
+          <Button color="danger" onClick={this.onDeleteClick.bind(this)}>
+            USUŃ KONTO
+          </Button>
+        </div>
       ))
     ) : (
       <Redirect to="/" />

@@ -13,8 +13,8 @@ const MentItemShema = new Schema({
   likes: [
     {
       user: {
-        // type: Schema.Types.ObjectId,
-        // ref: "menitems"
+        type: Schema.Types.ObjectId,
+        ref: "users"
       }
     }
   ]
