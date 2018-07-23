@@ -20,20 +20,12 @@ const PreShopping = () => {
           On
         </Link>
         <Link
-          name="on"
+          name="ona"
           className="text-white links mr-5"
           color="secondary"
           to="/ona"
         >
           Ona
-        </Link>
-        <Link
-          name="on"
-          className="text-white links"
-          color="secondary"
-          to="/dziecko"
-        >
-          Dziecko
         </Link>
       </div>
     </div>
